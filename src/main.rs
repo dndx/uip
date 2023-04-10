@@ -42,7 +42,12 @@ async fn main() -> Result<(), Error> {
 
     info!("Server address is: {}", addr);
 
-    let conn = UdpSocket::bind("0:0").await?;
+    let conn = UdpSocket::bind(if addr.is_ipv4() {
+        "0.0.0.0:0"
+    } else {
+        "[::]:0"
+    })
+    .await?;
 
     conn.connect(addr).await?;
 
