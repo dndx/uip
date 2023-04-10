@@ -1,0 +1,21 @@
+[package]
+name = "uip"
+version = "0.1.0"
+edition = "2021"
+authors = ["Datong Sun <dndx@idndx.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/dndx/uip"
+readme = "README.md"
+description = """
+A tool to quickly determine the public IP address of a machine behind
+NAT with the help of STUN servers.
+"""
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.2", features = ["cargo"] }
+log = "0.4"
+stun = "0.4"
+tokio = "1.27"
+pretty_env_logger = "0.4"
