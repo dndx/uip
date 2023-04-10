@@ -71,7 +71,7 @@ async fn main() -> Result<(), Error> {
     if let Some(event) = handler_rx.recv().await {
         let msg = event.event_body?;
         let mut xor_addr = XorMappedAddress::default();
-        if let Ok(_) = xor_addr.get_from(&msg) {
+        if xor_addr.get_from(&msg).is_ok() {
             println!("{}", xor_addr.ip);
         } else {
             info!("XOR-MAPPED-ADDRESS attribute does not exist, trying MAPPED-ADDRESS instead");
