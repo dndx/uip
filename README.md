@@ -21,14 +21,15 @@ A tool to quickly determine the public IP address of a machine behind
 NAT with the help of STUN servers.
 
 
-Usage: uip [HOST:PORT]
+Usage: uip [OPTIONS] [HOST:PORT]
 
 Arguments:
   [HOST:PORT]  STUN server host and port. If PORT is omitted, it defaults to 3478 [default: stun.l.google.com:19302]
 
 Options:
-  -h, --help     Print help
-  -V, --version  Print version
+  -4, --ipv4-only  Do not use IPv6 addresses when connecting to STUN server
+  -h, --help       Print help
+  -V, --version    Print version
 ```
 
 ## Default port (UDP 3478):
