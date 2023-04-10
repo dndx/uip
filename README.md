@@ -52,6 +52,23 @@ The program timeouts after `5` seconds in case a response can not be received.
 
 To debug, run it with `RUST_LOG=debug uip`.
 
+# Public STUN servers
+
+* `stun.l.google.com`
+* `stun1.l.google.com`
+* `stun2.l.google.com`
+* `stun3.l.google.com`
+* `stun4.l.google.com`
+* `stun.syncthing.net`
+* `stun.xten.com`
+
+## Servers in China
+
+* `stun.qq.com`
+* `stun.miwifi.com`
+
+[public-stun-list.txt](https://gist.github.com/mondain/b0ec1cf5f60ae726202e) (Unverified)
+
 # Credits
 
 This script was modified from the [`stun_client.rs`](https://github.com/webrtc-rs/webrtc/blob/master/stun/examples/stun_client.rs)
