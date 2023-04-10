@@ -75,7 +75,7 @@ This script was modified from the [`stun_client.rs`](https://github.com/webrtc-r
 example of the [WebRTC.rs project](https://github.com/webrtc-rs/webrtc) by Rain Liu <yliu@webrtc.rs>.
 
 `uip` added better error handling, more friendly command line interface and fallback to `MAPPED-ADDRESS` attribute
-in case `XOR-MAPPED-ADDRESS` can not be found since some servers that I tested does not return ``XOR-MAPPED-ADDRESS`.
+in case `XOR-MAPPED-ADDRESS` can not be found since some servers that I tested does not return `XOR-MAPPED-ADDRESS`.
 
 # License
 
