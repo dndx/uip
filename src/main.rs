@@ -6,7 +6,7 @@ use stun::message::*;
 use stun::xoraddr::*;
 use stun::Error;
 
-use clap::{arg, command};
+use clap::{arg, command, Arg, ArgAction};
 use std::sync::Arc;
 use tokio::net::{lookup_host, UdpSocket};
 
@@ -19,6 +19,14 @@ async fn main() -> Result<(), Error> {
             arg!([SERVER] "STUN server host and port. If PORT is omitted, it defaults to 3478")
                 .value_name("HOST:PORT")
                 .default_value("stun.l.google.com:19302"),
+        )
+        .arg(
+            Arg::new("ipv4_only")
+                .long("ipv4-only")
+                .short('4')
+                .required(false)
+                .help("Do not use IPv6 addresses when connecting to STUN server")
+                .action(ArgAction::SetTrue),
         )
         .get_matches();
 
@@ -34,10 +42,12 @@ async fn main() -> Result<(), Error> {
         server.push_str(":3478");
     }
 
+    let ipv4_only = matches.get_flag("ipv4_only");
+
     let addr = lookup_host(server)
         .await
         .expect("failed to parse/resolve server address and port number")
-        .next()
+        .find(|addr| !ipv4_only || addr.is_ipv4())
         .expect("unable to resolve remote host name");
 
     info!("Server address is: {}", addr);
