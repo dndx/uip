@@ -60,6 +60,7 @@ To debug, run it with `RUST_LOG=debug uip`.
 * `stun2.l.google.com`
 * `stun3.l.google.com`
 * `stun4.l.google.com`
+* `stun.cloudflare.com`
 * `stun.syncthing.net`
 * `stun.xten.com`
 
@@ -67,6 +68,7 @@ To debug, run it with `RUST_LOG=debug uip`.
 
 * `stun.qq.com`
 * `stun.miwifi.com`
+* `stun.chat.bilibili.com`
 
 [public-stun-list.txt](https://gist.github.com/mondain/b0ec1cf5f60ae726202e) (Unverified)
 
