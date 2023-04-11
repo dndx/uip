@@ -24,3 +24,5 @@ pretty_env_logger = "0.4"
 strip = true
 opt-level = "z"  # Optimize for size.
 lto = true
+panic = "abort"
+codegen-units = 1
