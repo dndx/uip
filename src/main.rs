@@ -18,7 +18,7 @@ async fn main() -> Result<(), Error> {
         .arg(
             arg!([SERVER] "STUN server host and port. If PORT is omitted, it defaults to 3478")
                 .value_name("HOST:PORT")
-                .default_value("stun.l.google.com:19302"),
+                .default_value("stun.cloudflare.com"),
         )
         .arg(
             Arg::new("ipv4_only")

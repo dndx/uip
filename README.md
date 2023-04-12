@@ -24,7 +24,7 @@ NAT with the help of STUN servers.
 Usage: uip [OPTIONS] [HOST:PORT]
 
 Arguments:
-  [HOST:PORT]  STUN server host and port. If PORT is omitted, it defaults to 3478 [default: stun.l.google.com:19302]
+  [HOST:PORT]  STUN server host and port. If PORT is omitted, it defaults to 3478 [default: stun.cloudflare.com]
 
 Options:
   -4, --ipv4-only  Do not use IPv6 addresses when connecting to STUN server
@@ -35,7 +35,7 @@ Options:
 ## Default port (UDP 3478):
 
 ```
-$ uip stun.l.google.com
+$ uip stun.cloudflare.com
 203.0.113.1
 ```
 
@@ -55,12 +55,12 @@ To debug, run it with `RUST_LOG=debug uip`.
 
 # Public STUN servers
 
+* `stun.cloudflare.com`
 * `stun.l.google.com`
 * `stun1.l.google.com`
 * `stun2.l.google.com`
 * `stun3.l.google.com`
 * `stun4.l.google.com`
-* `stun.cloudflare.com`
 * `stun.syncthing.net`
 * `stun.xten.com`
 
