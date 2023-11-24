@@ -19,6 +19,9 @@ log = "0.4"
 stun = "0.4"
 tokio = "1.27"
 pretty_env_logger = "0.5"
+fast-socks5 = "0.9.1"
+async-trait = "0.1.74"
+webrtc-util = "0.7.0"
 
 [profile.release]
 strip = true
