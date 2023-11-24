@@ -35,11 +35,11 @@ async fn main() -> Result<(), Error> {
                 .action(ArgAction::SetTrue),
         )
         .arg(
-            Arg::new("host:port")
+            Arg::new("socks5")
                 .long("socks5")
                 .short('s')
                 .required(false)
-                .help("Use SOCKS5 udp proxy"),
+                .help("Use SOCKS5 udp proxy <Host:Port>"),
         )
         .get_matches();
 
@@ -66,7 +66,6 @@ async fn main() -> Result<(), Error> {
     info!("Server address is: {}", addr);
 
     let mut client = if let Some(proxy) = matches.get_one::<String>("socks5") {
-        println!("Using SOCKS5 proxy: {}", proxy);
         let backing_socket = TcpStream::connect(proxy).await?;
         let u = fast_socks5::client::Socks5Datagram::bind(backing_socket, "0.0.0.0:0")
             .await
